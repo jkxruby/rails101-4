@@ -5,7 +5,7 @@ end
 
 def show
   @group = Group.find(params[:id])
-end 
+end
 
 def new
   @group = Group.new
@@ -26,8 +26,8 @@ end
 
     def update
       @group = Group.find(params[:id])
-      if @group.upadate(group_params)
-        redirect_to groups_path
+      if @group.update(group_params)
+        redirect_to groups_path, notice: "update success"
       else
         render :edit
       end
